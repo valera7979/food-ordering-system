@@ -1,0 +1,1 @@
+This module create general jar and docker image for order-service modules
