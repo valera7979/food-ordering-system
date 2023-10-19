@@ -1,13 +1,20 @@
 package com.food.ordering.system.domain.valueobject;
 
-import lombok.Getter;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
 
-@Getter
-public record Money(BigDecimal amount) {
+public class Money {
+
+    private final BigDecimal amount;
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public Money(BigDecimal amount) {
+        this.amount = amount;
+    }
 
     public boolean isGreaterThanZero() {
         return this.amount != null && this.amount.compareTo(BigDecimal.ZERO) > 0;
@@ -45,4 +52,5 @@ public record Money(BigDecimal amount) {
     public int hashCode() {
         return Objects.hash(amount);
     }
+
 }
