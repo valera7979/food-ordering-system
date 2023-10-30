@@ -9,9 +9,7 @@ import java.util.Collections;
 public class PaymentCancelledEvent extends PaymentEvent {
 
     public PaymentCancelledEvent(Payment payment,
-                                 ZonedDateTime createdAt,
-                                 DomainEventPublisher<PaymentCancelledEvent>
-                                         paymentCancelledEventDomainEventPublisher) {
+                                 ZonedDateTime createdAt) {
         super(payment, createdAt, Collections.emptyList());
     }
 
