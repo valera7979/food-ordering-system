@@ -1,0 +1,28 @@
+#exclude intelliJ files
+.idea
+.vagrant
+.node
+*.iml
+*.iws
+*.ipr
+
+
+#exclude eclipse files
+.settings
+.metadata
+.workspace
+.project
+.classpath
+*.springBeans
+*.springWebflow
+maven-eclipse.xml
+
+target
+**/bin/**
+.toDelete
+volumes/
+infrastructure/docker-compose/volumes/**/**
+
+# Logs
+logs
+*.log
