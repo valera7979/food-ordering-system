@@ -27,10 +27,10 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
   }
 
   private static final BinaryMessageEncoder<PaymentResponseAvroModel> ENCODER =
-      new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
+      new BinaryMessageEncoder<PaymentResponseAvroModel>(MODEL$, SCHEMA$);
 
   private static final BinaryMessageDecoder<PaymentResponseAvroModel> DECODER =
-      new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
+      new BinaryMessageDecoder<PaymentResponseAvroModel>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
@@ -54,7 +54,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
   public static BinaryMessageDecoder<PaymentResponseAvroModel> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
+    return new BinaryMessageDecoder<PaymentResponseAvroModel>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
@@ -118,14 +118,9 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
     this.failureMessages = failureMessages;
   }
 
-  @Override
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
-
-  @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
-
   // Used by DatumWriter.  Applications should not call.
-  @Override
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return id;
@@ -161,7 +156,6 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
   }
 
   // Used by DatumReader.  Applications should not call.
-  @Override
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
