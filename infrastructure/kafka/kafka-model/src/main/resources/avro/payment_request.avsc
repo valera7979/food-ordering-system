@@ -6,25 +6,29 @@
         {
             "name": "id",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "sagaId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "customerId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "orderId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
@@ -46,10 +50,10 @@
         {
             "name": "paymentOrderStatus",
             "type": {
-                  "type": "enum",
-                  "name": "PaymentOrderStatus",
-                  "symbols": ["PENDING", "CANCELLED"]
-               }
+                "type": "enum",
+                "name": "PaymentOrderStatus",
+                "symbols": ["PENDING", "CANCELLED"]
+            }
         }
     ]
 }

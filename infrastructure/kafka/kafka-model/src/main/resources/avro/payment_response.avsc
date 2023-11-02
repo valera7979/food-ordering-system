@@ -6,31 +6,36 @@
         {
             "name": "id",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "sagaId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "paymentId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "customerId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "orderId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
@@ -52,18 +57,18 @@
         {
             "name": "paymentStatus",
             "type": {
-                  "type": "enum",
-                  "name": "PaymentStatus",
-                  "symbols": ["COMPLETED", "CANCELLED", "FAILED"]
-               }
+                "type": "enum",
+                "name": "PaymentStatus",
+                "symbols": ["COMPLETED", "CANCELLED", "FAILED"]
+            }
         },
         {
             "name": "failureMessages",
             "type": {
                 "type": "array",
                 "items":{
-                  "type":"string"
-               }
+                    "type":"string"
+                }
             }
         }
     ]

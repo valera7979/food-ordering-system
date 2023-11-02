@@ -6,33 +6,37 @@
         {
             "name": "id",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "sagaId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "restaurantId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "orderId",
             "type": {
-                "type": "string"
+                "type": "string",
+                "logicalType": "uuid"
             }
         },
         {
             "name": "restaurantOrderStatus",
             "type": {
-                  "type": "enum",
-                  "name": "RestaurantOrderStatus",
-                  "symbols": ["PAID"]
+                "type": "enum",
+                "name": "RestaurantOrderStatus",
+                "symbols": ["PAID"]
             }
         },
         {
@@ -40,13 +44,13 @@
             "type": {
                 "type": "array",
                 "items":{
-                  "name":"Product",
-                  "type":"record",
-                  "fields":[
-                    {"name":"id", "type": "string", "logicalType": "uuid"},
-                    {"name":"quantity", "type": "int"}
-                   ]
-               }
+                    "name":"Product",
+                    "type":"record",
+                    "fields":[
+                        {"name":"id", "type": "string", "logicalType": "uuid"},
+                        {"name":"quantity", "type": "int"}
+                    ]
+                }
             }
         },
         {

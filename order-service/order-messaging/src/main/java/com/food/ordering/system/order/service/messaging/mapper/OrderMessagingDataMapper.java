@@ -42,15 +42,15 @@ public class OrderMessagingDataMapper {
     }
 
     public RestaurantApprovalRequestAvroModel
-    orderPaidEvenToRestaurantApprovalRequestAvroModel(OrderPaidEvent orderPaidEvent) {
+    orderPaidEventToRestaurantApprovalRequestAvroModel(OrderPaidEvent orderPaidEvent) {
         Order order = orderPaidEvent.getOrder();
         return RestaurantApprovalRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setOrderId(order.getId().getValue().toString())
                 .setRestaurantId(order.getRestaurantId().getValue().toString())
-                .setRestaurantOrderStatus(RestaurantOrderStatus
-                        .valueOf(order.getOrderStatus().name()))
+//                .setRestaurantOrderStatus(com.food.ordering.system.kafka.order.avro.model.RestaurantOrderStatus
+//                        .valueOf(order.getOrderStatus().name()))
                 .setProducts(order.getItems().stream().map(orderItem ->
                         com.food.ordering.system.kafka.order.avro.model.Product.newBuilder()
                                 .setId(orderItem.getProduct().getId().getValue().toString())
