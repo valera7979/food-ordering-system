@@ -78,12 +78,12 @@ public class PaymentOutboxHelper {
 //                .build());
 //    }
 //
-//    @Transactional
-//    public void deletePaymentOutboxMessageByOutboxStatusAndSagaStatus(OutboxStatus outboxStatus,
-//                                                                      SagaStatus... sagaStatus) {
-//        paymentOutboxRepository.deleteByTypeAndOutboxStatusAndSagaStatus(ORDER_SAGA_NAME, outboxStatus, sagaStatus);
-//    }
-//
+    @Transactional
+    public void deletePaymentOutboxMessageByOutboxStatusAndSagaStatus(OutboxStatus outboxStatus,
+                                                                      SagaStatus... sagaStatus) {
+        paymentOutboxRepository.deleteByTypeAndOutboxStatusAndSagaStatus(ORDER_SAGA_NAME, outboxStatus, sagaStatus);
+    }
+
 //    private String createPayload(OrderPaymentEventPayload paymentEventPayload) {
 //        try {
 //            return objectMapper.writeValueAsString(paymentEventPayload);
