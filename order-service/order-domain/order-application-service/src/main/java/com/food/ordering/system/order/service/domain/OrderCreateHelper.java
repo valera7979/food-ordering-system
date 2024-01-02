@@ -47,7 +47,7 @@ public class OrderCreateHelper {
         var restaurant = checkRestaurant(createOrderCommand);
         var order = orderDataMapper.createOrderCommandToOrder(createOrderCommand);
         var orderCreateEvent = orderDomainService
-                .validateAndInitiateOrder(order, restaurant, null);
+                .validateAndInitiateOrder(order, restaurant);
         saveOrder(order);
         log.info("Order is created with id: {}", orderCreateEvent.getOrder().getId().getValue());
         return orderCreateEvent;
