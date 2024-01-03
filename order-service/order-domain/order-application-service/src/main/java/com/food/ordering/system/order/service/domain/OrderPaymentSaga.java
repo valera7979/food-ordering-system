@@ -66,7 +66,6 @@ public class OrderPaymentSaga implements SagaStep<PaymentResponse> {
 
         OrderPaymentOutboxMessage orderPaymentOutboxMessage = orderPaymentOutboxMessageResponse.get();
 
-
         OrderPaidEvent domainEvent = completePaymentForOrder(paymentResponse);
 
         SagaStatus sagaStatus = orderSagaHelper.orderStatusToSagaStatus(domainEvent.getOrder().getOrderStatus());
@@ -125,12 +124,9 @@ public class OrderPaymentSaga implements SagaStep<PaymentResponse> {
         return orderResponse.get();
     }
 
-    private OrderPaymentOutboxMessage getUpdatedPaymentOutboxMessage(OrderPaymentOutboxMessage
-                                                                             orderPaymentOutboxMessage,
-                                                                     OrderStatus
-                                                                             orderStatus,
-                                                                     SagaStatus
-                                                                             sagaStatus) {
+    private OrderPaymentOutboxMessage getUpdatedPaymentOutboxMessage(OrderPaymentOutboxMessage orderPaymentOutboxMessage,
+                                                                     OrderStatus orderStatus,
+                                                                     SagaStatus sagaStatus) {
         orderPaymentOutboxMessage.setProcessedAt(ZonedDateTime.now(ZoneId.of(UTC)));
         orderPaymentOutboxMessage.setOrderStatus(orderStatus);
         orderPaymentOutboxMessage.setSagaStatus(sagaStatus);
