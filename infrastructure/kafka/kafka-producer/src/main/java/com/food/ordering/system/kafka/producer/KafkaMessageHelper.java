@@ -54,7 +54,7 @@ public class KafkaMessageHelper {
                         metadata.partition(),
                         metadata.offset(),
                         metadata.timestamp());
-
+                outboxCallback.accept(outboxMessage, OutboxStatus.COMPLETED);
             }
         };
     }
